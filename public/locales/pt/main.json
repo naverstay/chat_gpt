@@ -42,5 +42,6 @@
   "limit": "Você atingiu seu limite diário. Ele será atualizado em 24 horas.",
   "left": "mensagens restantes",
   "placeholder": "Digite seu texto...",
-  "image_placeholder": "Digite uma descrição da imagem..."
+  "image_placeholder": "Digite uma descrição da imagem...",
+  "start": "Digite sua mensagem para iniciar um bate-papo. Pode ser uma pergunta, uma afirmação ou qualquer outro texto."
 }

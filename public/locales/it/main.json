@@ -42,5 +42,6 @@
   "limit": "Hai raggiunto il limite giornaliero. Si aggiornerà in 24 ore.",
   "left": "messaggi rimasti",
   "placeholder": "Inserisci il tuo testo...",
-  "image_placeholder": "Inserisci una descrizione dell'immagine..."
+  "image_placeholder": "Inserisci una descrizione dell'immagine...",
+  "start": "Inserisci il tuo messaggio per avviare una chat. Questa potrebbe essere una domanda, una dichiarazione o qualsiasi altro testo."
 }

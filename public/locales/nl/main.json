@@ -42,5 +42,6 @@
   "limit": "U heeft uw daglimiet bereikt. Het wordt binnen 24 uur bijgewerkt.",
   "left": "berichten",
   "placeholder": "Vul je tekst in...",
-  "image_placeholder": "Voer een afbeeldingsbeschrijving in..."
+  "image_placeholder": "Voer een afbeeldingsbeschrijving in...",
+  "start": "Voer uw bericht in om een chat te starten. Dit kan een vraag zijn, een stelling of een andere tekst."
 }

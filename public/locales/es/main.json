@@ -42,5 +42,6 @@
   "limit": "Ha alcanzado su limite diario. Se actualizará en 24 horas.",
   "left": "mensajes",
   "placeholder": "Introduce tu texto...",
-  "image_placeholder": "Introduce una descripción de la imagen..."
+  "image_placeholder": "Introduce una descripción de la imagen...",
+  "start": "Ingrese su mensaje para iniciar un chat. Esto podría ser una pregunta, una afirmación o cualquier otro texto."
 }

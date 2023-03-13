@@ -42,5 +42,6 @@
   "limit": "Anda telah mencapai batas harian Anda. Ini akan diperbarui dalam 24 jam.",
   "left": "pesan tersisa",
   "placeholder": "Masukkan teks Anda ...",
-  "image_placeholder": "Masukkan deskripsi gambar ..."
+  "image_placeholder": "Masukkan deskripsi gambar ...",
+  "start": "Masukkan pesan Anda untuk memulai obrolan. Ini bisa berupa pertanyaan, pernyataan, atau teks lainnya."
 }

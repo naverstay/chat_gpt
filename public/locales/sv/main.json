@@ -42,5 +42,6 @@
   "limit": "Du har nått din dagliga gräns. Det kommer att uppdateras inom 24 timmar.",
   "left": "meddelanden kvar",
   "placeholder": "Skriv in din text...",
-  "image_placeholder": "Ange en bildbeskrivning..."
+  "image_placeholder": "Ange en bildbeskrivning...",
+  "start": "Skriv ditt meddelande för att starta en chatt. Detta kan vara en fråga, ett påstående eller någon annan text."
 }

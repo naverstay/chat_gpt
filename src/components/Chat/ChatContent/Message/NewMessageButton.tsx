@@ -5,9 +5,12 @@ import PlusIcon from '@icon/PlusIcon';
 
 import { ChatInterface } from '@type/chat';
 import { generateDefaultChat } from '@constants/chat';
+import {useTranslation} from "react-i18next";
 
 const NewMessageButton = React.memo(
   ({ messageIndex }: { messageIndex: number }) => {
+      const { t } = useTranslation();
+
     const setChats = useStore((state) => state.setChats);
     const currentChatIndex = useStore((state) => state.currentChatIndex);
     const setCurrentChatIndex = useStore((state) => state.setCurrentChatIndex);
@@ -24,7 +27,7 @@ const NewMessageButton = React.memo(
           title = `New Chat ${titleIndex}`;
         }
 
-        updatedChats.unshift(generateDefaultChat(title));
+        updatedChats.unshift(generateDefaultChat(title, t('start') || ''));
         setChats(updatedChats);
         setCurrentChatIndex(0);
       }

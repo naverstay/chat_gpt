@@ -42,5 +42,6 @@
   "limit": "You have reached your daily limit. It will update in 24 hours.",
   "left": "messages left",
   "placeholder": "Provide a prompt ...",
-  "image_placeholder": "Enter an image description ..."
+  "image_placeholder": "Enter an image description ...",
+  "start": "Enter your message to start a chat. This could be a question, a statement, or any other text."
 }

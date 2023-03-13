@@ -42,5 +42,6 @@
   "limit": "Vous avez atteint votre limite quotidienne. Il sera mis à jour dans 24 heures.",
   "left": "messages restants",
   "placeholder": "Entrez votre texte...",
-  "image_placeholder": "Entrez une description de l'image..."
+  "image_placeholder": "Entrez une description de l'image...",
+  "start": "Saisissez votre message pour démarrer une conversation. Il peut s'agir d'une question, d'une affirmation ou de tout autre texte."
 }

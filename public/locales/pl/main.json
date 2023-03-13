@@ -42,5 +42,6 @@
   "limit": "Osiągnąłeś dzienny limit. Zaktualizuje się w ciągu 24 godzin.",
   "left": "wiadomości",
   "placeholder": "Wpisz swoj tekst...",
-  "image_placeholder": "Wprowadź opis obrazu..."
+  "image_placeholder": "Wprowadź opis obrazu...",
+  "start": "Wpisz swoją wiadomość, aby rozpocząć czat. Może to być pytanie, stwierdzenie lub dowolny inny tekst."
 }

@@ -42,5 +42,6 @@
   "limit": "Sie haben Ihr Tageslimit erreicht. Es wird in 24 Stunden aktualisiert.",
   "left": "Nachrichten übrig",
   "placeholder": "Geben Sie Ihren Text ein ...",
-  "image_placeholder": "Geben Sie eine Bildbeschreibung ein ..."
+  "image_placeholder": "Geben Sie eine Bildbeschreibung ein ...",
+  "start": "Geben Sie Ihre Nachricht ein, um einen Chat zu starten. Dies kann eine Frage, eine Aussage oder ein beliebiger anderer Text sein."
 }
