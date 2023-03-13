@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import useStore from '@store/store';
 
-import Chat from './components/Chat';
-import Menu from './components/Menu';
+import Chat from '@components/Chat';
+import Menu from '@components/Menu';
 
 import useInitialiseNewChat from '@hooks/useInitialiseNewChat';
 import { ChatInterface } from '@type/chat';

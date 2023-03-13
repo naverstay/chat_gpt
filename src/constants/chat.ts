@@ -16,8 +16,10 @@ Knowledge cutoff: 2021-09
 Current date: ${dateString}`;
 
 export const defaultChatConfig: ConfigInterface = {
-    temperature: 1,
-    presence_penalty: 0,
+  temperature: 1,
+  presence_penalty: 0,
+  top_p: 1,
+  frequency_penalty: 0
 };
 
 export const generateDefaultChat = (title?: string): ChatInterface => ({
@@ -26,3 +28,41 @@ export const generateDefaultChat = (title?: string): ChatInterface => ({
     config: {...defaultChatConfig},
     titleSet: false,
 });
+
+export const codeLanguageSubset = [
+  'python',
+  'javascript',
+  'java',
+  'go',
+  'bash',
+  'c',
+  'cpp',
+  'csharp',
+  'css',
+  'diff',
+  'graphql',
+  'json',
+  'kotlin',
+  'less',
+  'lua',
+  'makefile',
+  'markdown',
+  'objectivec',
+  'perl',
+  'php',
+  'php-template',
+  'plaintext',
+  'python-repl',
+  'r',
+  'ruby',
+  'rust',
+  'scss',
+  'shell',
+  'sql',
+  'swift',
+  'typescript',
+  'vbnet',
+  'wasm',
+  'xml',
+  'yaml',
+];

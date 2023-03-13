@@ -4,8 +4,12 @@ import { ChatSlice, createChatSlice } from './chat-slice';
 import { InputSlice, createInputSlice } from './input-slice';
 import { AuthSlice, createAuthSlice } from './auth-slice';
 import { ConfigSlice, createConfigSlice } from './config-slice';
-import { LocalStorageInterface } from '@type/chat';
-import { migrateV0 } from './migrate';
+import {
+  LocalStorageInterfaceV0ToV1,
+  LocalStorageInterfaceV1ToV2,
+  LocalStorageInterfaceV2ToV3,
+} from '@type/chat';
+import { migrateV0, migrateV1, migrateV2 } from './migrate';
 
 export type StoreState = ChatSlice & InputSlice & AuthSlice & ConfigSlice;
 
@@ -29,14 +33,19 @@ const useStore = create<StoreState>()(
         currentChatIndex: state.currentChatIndex,
         apiKey: state.apiKey,
         apiFree: state.apiFree,
-        apiFreeEndpoint: state.apiFreeEndpoint,
+        apiEndpoint: state.apiEndpoint,
         theme: state.theme,
+        autoTitle: state.autoTitle,
       }),
-      version: 1,
+      version: 3,
       migrate: (persistedState, version) => {
         switch (version) {
           case 0:
-            migrateV0(persistedState as LocalStorageInterface);
+            migrateV0(persistedState as LocalStorageInterfaceV0ToV1);
+          case 1:
+            migrateV1(persistedState as LocalStorageInterfaceV1ToV2);
+          case 2:
+            migrateV2(persistedState as LocalStorageInterfaceV2ToV3);
             break;
         }
         return persistedState as StoreState;
