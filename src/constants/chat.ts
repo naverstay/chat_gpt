@@ -1,12 +1,14 @@
-import { ChatInterface, ConfigInterface } from '@type/chat';
+import {ChatInterface, ConfigInterface} from '@type/chat';
+
+export const API_KEY = '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';
 
 const date = new Date();
 const dateString =
-  date.getFullYear() +
-  '-' +
-  ('0' + (date.getMonth() + 1)).slice(-2) +
-  '-' +
-  ('0' + date.getDate()).slice(-2);
+    date.getFullYear() +
+    '-' +
+    ('0' + (date.getMonth() + 1)).slice(-2) +
+    '-' +
+    ('0' + date.getDate()).slice(-2);
 
 // default system message obtained using the following method: https://twitter.com/DeminDimin/status/1619935545144279040
 export const defaultSystemMessage = `You are ChatGPT, a large language model trained by OpenAI.
@@ -14,13 +16,13 @@ Knowledge cutoff: 2021-09
 Current date: ${dateString}`;
 
 export const defaultChatConfig: ConfigInterface = {
-  temperature: 1,
-  presence_penalty: 0,
+    temperature: 1,
+    presence_penalty: 0,
 };
 
 export const generateDefaultChat = (title?: string): ChatInterface => ({
-  title: title ? title : 'New Chat',
-  messages: [{ role: 'system', content: defaultSystemMessage }],
-  config: { ...defaultChatConfig },
-  titleSet: false,
+    title: title ? title : 'New Chat',
+    messages: [{role: 'system', content: defaultSystemMessage}],
+    config: {...defaultChatConfig},
+    titleSet: false,
 });

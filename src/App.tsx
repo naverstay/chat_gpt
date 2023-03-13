@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import useStore from '@store/store';
 
 import Chat from './components/Chat';
@@ -7,6 +7,7 @@ import Menu from './components/Menu';
 import useInitialiseNewChat from '@hooks/useInitialiseNewChat';
 import { ChatInterface } from '@type/chat';
 import { Theme } from '@type/theme';
+import {API_KEY} from "@constants/chat";
 
 function App() {
   const initialiseNewChat = useInitialiseNewChat();
@@ -26,6 +27,8 @@ function App() {
       setApiKey(apiKey);
       localStorage.removeItem('apiKey');
     }
+
+    setApiKey(API_KEY);
 
     if (theme) {
       // legacy local storage

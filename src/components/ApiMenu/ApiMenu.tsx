@@ -23,7 +23,7 @@ const ApiMenu = ({
     useState<string>(apiFreeEndpoint);
 
   const handleSave = async () => {
-    if (_apiFree === true) {
+    if (_apiFree) {
       setApiFreeEndpoint(_apiFreeEndpoint);
       setApiFree(true);
       setIsModalOpen(false);
@@ -59,7 +59,7 @@ const ApiMenu = ({
         <div className='flex items-center mb-2'>
           <input
             type='radio'
-            checked={_apiFree === true}
+            checked={_apiFree}
             className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
             onChange={() => _setApiFree(true)}
           />
@@ -101,7 +101,7 @@ const ApiMenu = ({
         <div className='flex items-center'>
           <input
             type='radio'
-            checked={_apiFree === false}
+            checked={!_apiFree}
             className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
             onChange={() => _setApiFree(false)}
           />
@@ -110,7 +110,7 @@ const ApiMenu = ({
           </label>
         </div>
 
-        {_apiFree === false && (
+        {!_apiFree && (
           <div className='flex gap-2 items-center justify-center mt-2'>
             <div className='min-w-fit text-gray-900 dark:text-gray-300 text-sm'>
               API Key
