@@ -1,0 +1,13 @@
+{
+  "configuration": "Yapılandırma",
+  "model": "Modeli",
+  "default": "Varsayılan",
+  "temperature": {
+    "label": "Sıcaklık",
+    "description": "Rastgeleliği kontrol eder: Düşürme, daha az rastgele tamamlamayla sonuçlanır. Sıcaklık sıfıra yaklaştıkça, model deterministik ve tekrarlayıcı hale gelecektir."
+  },
+  "presencePenalty": {
+    "label": "Doğaçlama",
+    "description": "Değer ne kadar yüksek olursa, ChatGPT'nin yeni konular hakkında konuşma olasılığı o kadar yüksektir."
+  }
+}

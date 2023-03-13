@@ -1,0 +1,13 @@
+{
+  "configuration": "Configuratie",
+  "model": "Model",
+  "default": "Standaard",
+  "temperature": {
+    "label": "Temperatuur",
+    "description": "Controleert willekeur: verlagen resulteert in minder willekeurige voltooiingen. Naarmate de temperatuur nul nadert, wordt het model deterministisch en repetitief."
+  },
+  "presencePenalty": {
+    "label": "Improvisatie",
+    "description": "Hoe hoger de waarde, hoe groter de kans dat ChatGPT over nieuwe onderwerpen zal praten."
+  }
+}

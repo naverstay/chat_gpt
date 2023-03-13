@@ -390,7 +390,7 @@ const EditView = ({
           onChange={(e) => {
             _setContent(e.target.value);
           }}
-          placeholder={t('promptPlaceholder') as string}
+          placeholder={t('placeholder') as string}
           value={_content}
           onInput={handleInput}
           onKeyDown={handleKeyDown}

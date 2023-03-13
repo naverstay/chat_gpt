@@ -1,0 +1,13 @@
+{
+  "configuration": "구성",
+  "model": "모델",
+  "default": "기본",
+  "temperature": {
+    "label": "온도",
+    "description": "임의성 제어: 결과를 낮추면 임의 완료가 줄어듭니다. 온도가 0에 가까워지면 모델은 결정적이고 반복적입니다."
+  },
+  "presencePenalty": {
+    "label": "즉흥 연주",
+    "description": "값이 높을수록 ChatGPT가 새로운 주제에 대해 이야기할 가능성이 높아집니다."
+  }
+}

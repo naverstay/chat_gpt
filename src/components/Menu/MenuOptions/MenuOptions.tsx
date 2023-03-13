@@ -18,7 +18,7 @@ const MenuOptions = () => {
             <ThemeSwitcher/>
             <LanguageSelector/>
             {/*<ImportExportChat/>*/}
-            <AboutMenu/>
+            {/*<AboutMenu/>*/}
         </>
     );
 };

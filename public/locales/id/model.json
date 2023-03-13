@@ -1,0 +1,13 @@
+{
+  "configuration": "Konfigurasi",
+  "model": "Model",
+  "default": "Bawaan",
+  "temperature": {
+    "label": "Suhu",
+    "description": "Mengontrol keacakan: Menurunkan menghasilkan penyelesaian yang kurang acak. Saat suhu mendekati nol, model akan menjadi deterministik dan berulang."
+  },
+  "presencePenalty": {
+    "label": "Improvisasi",
+    "description": "Semakin tinggi nilainya, semakin besar kemungkinan ChatGPT akan membicarakan topik baru."
+  }
+}

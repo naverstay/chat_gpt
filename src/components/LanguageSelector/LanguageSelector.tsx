@@ -35,17 +35,17 @@ const LanguageSelector = () => {
                 }}
             >
                 <WorldIcon/>
-                <span>{t('lang')}</span>
+                <span>{t('lang-' + i18n.language)}</span>
             </a>
 
             {isModalOpen && (
                 <PopupModal
                     setIsModalOpen={setIsModalOpen}
-                    title={t('langPopupTitle') as string}
+                    title={t('language') as string}
                     handleConfirm={handleConfirm}
                     showControls={false}
                 >
-                    <div className="p-4 pb-20">
+                    <div className="p-4 pb-20 w-60">
                         <div className='prose dark:prose-invert relative'>
                             <button
                                 className={'btn btn-neutral btn-small flex w-full flex justify-between ' + (dropDown ? 'rounded-b-none' : '')}

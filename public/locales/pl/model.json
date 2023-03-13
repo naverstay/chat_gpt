@@ -1,0 +1,13 @@
+{
+  "configuration": "Konfiguracja",
+  "model": "Model",
+  "default": "Domyślny",
+  "temperature": {
+    "label": "Temperatura",
+    "description": "Kontroluje losowość: Obniżenie powoduje mniej przypadkowych uzupełnień. Gdy temperatura zbliża się do zera, model staje się deterministyczny i powtarzalny."
+  },
+  "presencePenalty": {
+    "label": "Improwizacja",
+    "description": "Im wyższa wartość, tym bardziej prawdopodobne, że ChatGPT będzie rozmawiać na nowe tematy."
+  }
+}

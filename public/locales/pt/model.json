@@ -1,0 +1,13 @@
+{
+  "configuration": "Configuração",
+  "model": "Modelo",
+  "default": "Padrão",
+  "temperature": {
+    "label": "Temperatura",
+    "description": "Controla a aleatoriedade: reduzir resulta em conclusões menos aleatórias. À medida que a temperatura se aproxima de zero, o modelo se torna determinístico e repetitivo."
+  },
+  "presencePenalty": {
+    "label": "Improvisação",
+    "description": "Quanto maior o valor, maior a probabilidade de o ChatGPT falar sobre novos tópicos."
+  }
+}

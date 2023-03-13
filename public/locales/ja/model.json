@@ -1,0 +1,13 @@
+{
+  "configuration": "構成",
+  "model": "モデル",
+  "default": "デフォルト",
+  "temperature": {
+    "label": "温度",
+    "description": "ランダム性を制御します: 下げると、ランダムな補完が少なくなります。 温度がゼロに近づくと、モデルは決定論的になり、反復的になります。"
+  },
+  "presencePenalty": {
+    "label": "即興",
+    "description": "値が高いほど、ChatGPT が新しいトピックについて話す可能性が高くなります。"
+  }
+}

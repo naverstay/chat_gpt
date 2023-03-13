@@ -1,0 +1,13 @@
+{
+  "configuration": "Aufbau",
+  "model": "Modell",
+  "default": "Standard",
+  "temperature": {
+    "label": "Temperatur",
+    "description": "Steuert die Zufälligkeit: Das Senken führt zu weniger zufälligen Vervollständigungen. Wenn sich die Temperatur Null nähert, wird das Modell deterministisch und repetitiv."
+  },
+  "presencePenalty": {
+    "label": "Improvisation",
+    "description": "Je höher der Wert, desto wahrscheinlicher wird ChatGPT über neue Themen sprechen."
+  }
+}
