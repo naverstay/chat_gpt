@@ -4,16 +4,16 @@ import useStore from '@store/store';
 
 import PopupModal from '@components/PopupModal';
 import SettingIcon from '@icon/SettingIcon';
-import ThemeSwitcher from '@components/Menu/MenuOptions/ThemeSwitcher';
-import LanguageSelector from '@components/LanguageSelector';
-import AutoTitleToggle from './AutoTitleToggle';
 import ConfigMenu from "@components/ConfigMenu";
-import {shallow} from "zustand/esm/shallow";
+import {shallow} from "zustand/shallow";
 import {ChatInterface, ConfigInterface} from "@type/chat";
 import {defaultChatConfig} from "@constants/chat";
+// import ThemeSwitcher from '@components/Menu/MenuOptions/ThemeSwitcher';
+// import LanguageSelector from '@components/LanguageSelector';
+// import AutoTitleToggle from './AutoTitleToggle';
 
 const SettingsMenu = () => {
-    const {t} = useTranslation();
+    const {t} = useTranslation(['main', 'model']);
     const config = useStore(
         (state) =>
             state.chats &&
@@ -26,6 +26,7 @@ const SettingsMenu = () => {
     );
     const setChats = useStore((state) => state.setChats);
     const currentChatIndex = useStore((state) => state.currentChatIndex);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     const setConfig = (config: ConfigInterface) => {
         const updatedChats: ChatInterface[] = JSON.parse(
@@ -45,30 +46,25 @@ const SettingsMenu = () => {
         }
     }, [currentChatIndex]);
 
-    const theme = useStore.getState().theme;
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
-    useEffect(() => {
-        document.documentElement.className = theme;
-    }, [theme]);
-    return (config ?
-            <>
-                <a
-                    className='flex py-3 px-3 items-center gap-3 rounded-md hover:bg-gray-500/10 transition-colors duration-200 text-white cursor-pointer text-sm'
-                    onClick={() => {
-                        setIsModalOpen(true);
-                    }}
-                >
-                    <SettingIcon className='w-4 h-4'/> {t('setting') as string}
-                </a>
-                {isModalOpen && (
-                    <ConfigMenu
-                        setIsModalOpen={setIsModalOpen}
-                        config={config}
-                        setConfig={setConfig}
-                    />
-                )}
-            </> : null
+    return (
+        <>
+            <a
+                className='flex py-3 px-3 items-center gap-3 rounded-md hover:bg-gray-500/10 transition-colors duration-200 text-white cursor-pointer text-sm'
+                onClick={() => {
+                    setIsModalOpen(true);
+                }}
+            >
+                <SettingIcon className='w-4 h-4'/>
+                <span>{t('setting') as string}</span>
+            </a>
+            {(isModalOpen && config) ? (
+                <ConfigMenu
+                    setIsModalOpen={setIsModalOpen}
+                    config={config}
+                    setConfig={setConfig}
+                />
+            ) : null}
+        </>
     );
 };
 

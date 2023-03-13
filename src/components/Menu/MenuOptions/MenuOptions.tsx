@@ -14,7 +14,7 @@ const MenuOptions = () => {
     return (
         <>
             <ClearConversation/>
-            {/*<SettingsMenu/>*/}
+            <SettingsMenu/>
             <ThemeSwitcher/>
             <LanguageSelector/>
             {/*<ImportExportChat/>*/}

@@ -55,8 +55,8 @@ const ChatContent = () => {
                         className='flex flex-col items-center text-sm dark:bg-gray-800 w-full'
                         ref={saveRef}
                     >
-                        <AllIcons/>
-                        <ChatTitle/>
+                        {/*<AllIcons/>*/}
+                        {/*<ChatTitle/>*/}
                         {messages?.map((message, index) => (
                             <React.Fragment key={index}>
                                 <Message
