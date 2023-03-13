@@ -15,14 +15,15 @@ const LanguageSelector = () => {
     const handleConfirm = () => {
         setIsModalOpen(false);
     };
-    const getDir = async () => {
+
+    const getAllLangs = async () => {
         const locales = import.meta.glob('/public/locales/**/main.json');
 
         return Object.keys(locales).map((m: string): string => m.replace(/\/main.json$/, '').split('/').pop() as string)
     }
 
     useEffect(() => {
-        getDir().then(d => setI18nLanguages(d));
+        getAllLangs().then(d => setI18nLanguages(d));
     }, [])
 
     const [dropDown, setDropDown] = useState<boolean>(false);
@@ -35,7 +36,7 @@ const LanguageSelector = () => {
                 }}
             >
                 <WorldIcon/>
-                <span>{t('lang-' + i18n.language)}</span>
+                <span>{t('lang-' + i18n.language.split('-')[0])}</span>
             </a>
 
             {isModalOpen && (
@@ -52,7 +53,7 @@ const LanguageSelector = () => {
                                 type='button'
                                 onClick={() => setDropDown((prev) => !prev)}
                             >
-                                {t('lang-' + i18n.language)}
+                                {t('lang-' + i18n.language.split('-')[0])}
                                 <DownChevronArrow/>
                             </button>
                             <div
