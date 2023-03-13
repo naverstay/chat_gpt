@@ -19,20 +19,20 @@ module.exports = {
         'Apple Color Emoji',
         'Segoe UI Emoji',
         'Segoe UI Symbol',
-        'Noto Color Emoji',
+        'Noto Color Emoji'
       ],
-      mono: ['Söhne Mono', 'Monaco', 'Andale Mono', 'Ubuntu Mono', 'monospace'],
+      mono: ['Söhne Mono', 'Monaco', 'Andale Mono', 'Ubuntu Mono', 'monospace']
     },
     extend: {
       typography: {
         DEFAULT: {
           css: {
-            pre: { padding: 0, margin: 0 },
+            pre: {padding: 0, margin: 0},
             ul: {
-              'list-style-type': 'none',
-            },
-          },
-        },
+              'list-style-type': 'none'
+            }
+          }
+        }
       },
       colors: {
         gray: {
@@ -45,11 +45,11 @@ module.exports = {
           600: '#4b5563',
           700: '#40414f',
           800: '#343541',
-          900: '#202123',
-        },
-      },
-    },
+          900: '#202123'
+        }
+      }
+    }
   },
   plugins: [require('@tailwindcss/typography')],
-  darkMode: 'class',
+  darkMode: 'class'
 };

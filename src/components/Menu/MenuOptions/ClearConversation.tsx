@@ -25,7 +25,7 @@ const ClearConversation = () => {
         }}
       >
         <DeleteIcon />
-        {t('clearConversation')}
+          <span>{t('clearConversation')}</span>
       </a>
       {isModalOpen && (
         <PopupModal
