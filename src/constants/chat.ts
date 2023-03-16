@@ -1,14 +1,9 @@
 import {ChatInterface, ConfigInterface} from '@type/chat';
 
-export const API_KEY = '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';
+export const API_KEY = import.meta.env.VITE_API_KEY;
+export const API_LIMIT = parseInt(import.meta.env.VITE_API_LIMIT || '5');
 
-const date = new Date();
-const dateString =
-    date.getFullYear() +
-    '-' +
-    ('0' + (date.getMonth() + 1)).slice(-2) +
-    '-' +
-    ('0' + date.getDate()).slice(-2);
+console.log('API_KEY', API_KEY, API_LIMIT);
 
 // default system message obtained using the following method: https://twitter.com/DeminDimin/status/1619935545144279040
 
