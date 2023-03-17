@@ -27,7 +27,7 @@ import {ChatInterface} from '@type/chat';
 
 import PopupModal from '@components/PopupModal';
 import CodeBlock from './CodeBlock';
-import {codeLanguageSubset} from '@constants/chat';
+import {API_LIMIT, codeLanguageSubset} from '@constants/chat';
 
 const MessageContent = ({
                             role,
@@ -40,13 +40,10 @@ const MessageContent = ({
     messageIndex: number;
     sticky?: boolean;
 }) => {
-    const {t} = useTranslation();
     const [isEdit, setIsEdit] = useState<boolean>(sticky);
 
-    const limitCount = 0;
-
     return (
-        <div className='relative flex flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]'>
+        <div className='relative flex flex-col gap-1 md:gap-3 lg:w-[calc(100%-50px)]'>
             <div className='flex flex-grow flex-col gap-3'/>
             {isEdit ? (
                 <EditView
@@ -63,10 +60,6 @@ const MessageContent = ({
                     messageIndex={messageIndex}
                 />
             )}
-
-            <p className="text-center p-4">
-                {t('left')}: {limitCount}
-            </p>
         </div>
     );
 };
@@ -97,6 +90,7 @@ const ContentView = React.memo(
             );
             updatedChats[currentChatIndex].messages.splice(messageIndex, 1);
             setChats(updatedChats);
+            setIsDelete(false);
         };
 
         const handleMove = (direction: 'up' | 'down') => {
@@ -438,12 +432,15 @@ const EditViewButtons = React.memo(
         setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
     }) => {
         const {t} = useTranslation();
+        const apiRequestCount = useStore((state) => state.apiRequestCount);
 
         return (
             <div className='text-center mt-2 flex justify-center'>
                 {sticky && (
                     <button
-                        className='btn relative mr-2 btn-primary'
+                        disabled={API_LIMIT <= apiRequestCount}
+                        className={'btn relative mr-2 btn-primary' +
+                            (API_LIMIT <= apiRequestCount ? 'btn-primary' : '')}
                         onClick={handleSaveAndSubmit}
                     >
                         <div className='flex items-center justify-center gap-2'>
@@ -486,8 +483,6 @@ const EditViewButtons = React.memo(
                         </div>
                     </button>
                 )}
-
-
             </div>
         );
     }

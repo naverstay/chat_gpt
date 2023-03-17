@@ -3,8 +3,6 @@ import {ChatInterface, ConfigInterface} from '@type/chat';
 export const API_KEY = import.meta.env.VITE_API_KEY;
 export const API_LIMIT = parseInt(import.meta.env.VITE_API_LIMIT || '5');
 
-console.log('API_KEY', API_KEY, API_LIMIT);
-
 // default system message obtained using the following method: https://twitter.com/DeminDimin/status/1619935545144279040
 
 export const defaultChatConfig: ConfigInterface = {

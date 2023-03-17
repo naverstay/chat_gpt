@@ -10,8 +10,12 @@ import CrossIcon from '@icon/CrossIcon';
 import useSubmit from '@hooks/useSubmit';
 import DownloadChat from './DownloadChat';
 import AllIcons from "@components/AllIcons";
+import {useTranslation} from "react-i18next";
+import {API_LIMIT} from "@constants/chat";
 
 const ChatContent = () => {
+    const {t} = useTranslation();
+    const apiRequestCount = useStore((state) => state.apiRequestCount);
     const inputRole = useStore((state) => state.inputRole);
     const setError = useStore((state) => state.setError);
     const messages = useStore((state) =>
@@ -90,6 +94,10 @@ const ChatContent = () => {
                             </div>
                         </div>
                     )}
+
+                    <div className="text-center mt-4 text-black dark:text-white">
+                        {t('left')}: {API_LIMIT - apiRequestCount}
+                    </div>
                     <div className='mt-4'>
                         {useStore.getState().generating || (
                             <DownloadChat saveRef={saveRef}/>
