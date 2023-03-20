@@ -25,6 +25,7 @@ export const getPicture = async (
             "track_id": null,
             "width": config.width + '',
             "height": config.height + '',
+            "guidance_scale": config.guidance_scale,
             "samples": "1",
             "num_inference_steps": config.num_inference_steps + '',
         }),

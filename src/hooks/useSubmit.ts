@@ -96,8 +96,6 @@ const useSubmit = () => {
                 setApiRequestCount(apiRequestCount + 1);
 
                 if (apiPicture) {
-                    console.log('stream', stream);
-
                     const updatedMessages = updatedChats[currentChatIndex].messages;
                     updatedMessages[updatedMessages.length - 1].content += stream?.output?.[0] ?? '';
                     setChats(updatedChats);
