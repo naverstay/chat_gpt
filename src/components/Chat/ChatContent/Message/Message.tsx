@@ -4,14 +4,8 @@ import Avatar from './Avatar';
 import MessageContent from './MessageContent';
 
 import {Role} from '@type/chat';
-import RoleSelector from './RoleSelector';
 import RoleInfo from "@components/Chat/ChatContent/Message/RoleInfo";
 
-// const backgroundStyle: { [role in Role]: string } = {
-//   user: 'dark:bg-gray-800',
-//   assistant: 'bg-gray-50 dark:bg-[#444654]',
-//   system: 'bg-gray-50 dark:bg-[#444654]',
-// };
 const backgroundStyle = ['dark:bg-gray-800', 'bg-gray-50 dark:bg-[#444654]'];
 
 const Message = React.memo(
@@ -42,7 +36,6 @@ const Message = React.memo(
                         <MessageContent
                             role={role}
                             content={content}
-                            saveRef={saveRef}
                             messageIndex={messageIndex}
                             sticky={sticky}
                         />
