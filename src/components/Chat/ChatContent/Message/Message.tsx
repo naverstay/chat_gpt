@@ -18,12 +18,14 @@ const Message = React.memo(
     ({
          role,
          content,
+         saveRef,
          messageIndex,
          sticky = false,
      }: {
         role: Role;
         content: string;
         messageIndex: number;
+        saveRef: React.RefObject<HTMLDivElement>;
         sticky?: boolean;
     }) => {
         return (
@@ -40,6 +42,7 @@ const Message = React.memo(
                         <MessageContent
                             role={role}
                             content={content}
+                            saveRef={saveRef}
                             messageIndex={messageIndex}
                             sticky={sticky}
                         />

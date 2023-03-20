@@ -43,5 +43,7 @@
   "left": "messaggi rimasti",
   "placeholder": "Inserisci il tuo testo...",
   "image_placeholder": "Inserisci una descrizione dell'immagine...",
-  "start": "Inserisci il tuo messaggio per avviare una chat. Questa potrebbe essere una domanda, una dichiarazione o qualsiasi altro testo."
+  "start": "Inserisci il tuo messaggio per avviare una chat. Questa potrebbe essere una domanda, una dichiarazione o qualsiasi altro testo.",
+  "start_image": "Immettere una descrizione dell'immagine che si desidera generare. Ad esempio: un astronauta a cavallo su Marte, hd, illuminazione drammatica, dettagliato",
+  "download": "Scaricamento"
 }

@@ -27,7 +27,7 @@ const NewMessageButton = React.memo(
           title = `New Chat ${titleIndex}`;
         }
 
-        updatedChats.unshift(generateDefaultChat(title, t('start') || ''));
+        updatedChats.unshift(generateDefaultChat(title, t('start_image') || ''));
         setChats(updatedChats);
         setCurrentChatIndex(0);
       }

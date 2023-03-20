@@ -7,7 +7,13 @@
     "description": "Controla la aleatoriedad: la reducción da como resultado menos finalizaciones aleatorias. A medida que la temperatura se acerque a cero, el modelo se volverá determinista y repetitivo."
   },
   "presencePenalty": {
-    "label": "Improvisación",
+    "label": "Creatividad",
     "description": "Cuanto mayor sea el valor, mas probable es que ChatGPT hable sobre nuevos temas."
+  },
+  "picture": {
+    "width": "Ancho",
+    "height": "Altura",
+    "denoisingStepsNumber": "Número de pasos de eliminación de ruido",
+    "guidanceScale": "Escala de orientación"
   }
 }

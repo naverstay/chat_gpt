@@ -1,4 +1,4 @@
-import { ConfigInterface, MessageInterface } from '@type/chat';
+import {ConfigInterface, MessageInterface} from '@type/chat';
 
 export const getChatCompletion = async (
   endpoint: string,
@@ -18,8 +18,7 @@ export const getChatCompletion = async (
   });
   if (!response.ok) throw new Error(await response.text());
 
-  const data = await response.json();
-  return data;
+  return await response.json();
 };
 
 export const getChatCompletionStream = async (
@@ -54,6 +53,5 @@ export const getChatCompletionStream = async (
     throw new Error(error);
   }
 
-  const stream = response.body;
-  return stream;
+  return response.body;
 };

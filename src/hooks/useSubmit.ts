@@ -1,7 +1,7 @@
 import React from 'react';
 import useStore from '@store/store';
 import {ChatInterface, MessageInterface} from '@type/chat';
-import {getChatCompletion, getChatCompletionStream} from '@api/api';
+import {getChatCompletion, getChatCompletionStream, getPicture} from '@api/api';
 import {parseEventSource} from '@api/helper';
 import {limitMessageTokens} from '@utils/messageUtils';
 import {defaultChatConfig} from '@constants/chat';
@@ -10,6 +10,7 @@ const useSubmit = () => {
     const error = useStore((state) => state.error);
     const setError = useStore((state) => state.setError);
     const apiFree = useStore((state) => state.apiFree);
+    const apiPicture = useStore((state) => state.apiPicture);
     const apiKey = useStore((state) => state.apiKey);
     const apiRequestCount = useStore((state) => state.apiRequestCount);
     const setApiRequestCount = useStore((state) => state.setApiRequestCount);
@@ -64,7 +65,13 @@ const useSubmit = () => {
                 throw new Error('Message exceed max token!');
             }
 
-            if (apiFree) {
+            if (apiPicture) {
+                stream = await getPicture(
+                    useStore.getState().apiEndpoint,
+                    messages.pop()?.content ?? '',
+                    chats[currentChatIndex].config
+                );
+            } else if (apiFree) {
                 stream = await getChatCompletionStream(
                     useStore.getState().apiEndpoint,
                     messages,
@@ -88,41 +95,49 @@ const useSubmit = () => {
 
                 setApiRequestCount(apiRequestCount + 1);
 
-                const reader = stream.getReader();
-                let reading = true;
-                while (reading && useStore.getState().generating) {
-                    const {done, value} = await reader.read();
+                if (apiPicture) {
+                    console.log('stream', stream);
 
-                    const result = parseEventSource(new TextDecoder().decode(value));
-
-                    if (result === '[DONE]' || done) {
-                        reading = false;
-                    } else {
-                        const resultString = result.reduce((output: string, curr) => {
-                            if (typeof curr === 'string') return output;
-                            else {
-                                const content = curr.choices[0].delta.content;
-                                if (content) output += content;
-                                return output;
-                            }
-                        }, '');
-
-                        const updatedChats: ChatInterface[] = JSON.parse(
-                            JSON.stringify(useStore.getState().chats)
-                        );
-
-                        const updatedMessages = updatedChats[currentChatIndex].messages;
-                        updatedMessages[updatedMessages.length - 1].content += resultString;
-                        setChats(updatedChats);
-                    }
-                }
-                if (useStore.getState().generating) {
-                    reader.cancel('Cancelled by user');
+                    const updatedMessages = updatedChats[currentChatIndex].messages;
+                    updatedMessages[updatedMessages.length - 1].content += stream?.output?.[0] ?? '';
+                    setChats(updatedChats);
                 } else {
-                    reader.cancel('Generation completed');
+                    const reader = stream.getReader();
+                    let reading = true;
+                    while (reading && useStore.getState().generating) {
+                        const {done, value} = await reader.read();
+
+                        const result = parseEventSource(new TextDecoder().decode(value));
+
+                        if (result === '[DONE]' || done) {
+                            reading = false;
+                        } else {
+                            const resultString = result.reduce((output: string, curr) => {
+                                if (typeof curr === 'string') return output;
+                                else {
+                                    const content = curr.choices[0].delta.content;
+                                    if (content) output += content;
+                                    return output;
+                                }
+                            }, '');
+
+                            const updatedChats: ChatInterface[] = JSON.parse(
+                                JSON.stringify(useStore.getState().chats)
+                            );
+
+                            const updatedMessages = updatedChats[currentChatIndex].messages;
+                            updatedMessages[updatedMessages.length - 1].content += resultString;
+                            setChats(updatedChats);
+                        }
+                    }
+                    if (useStore.getState().generating) {
+                        reader.cancel('Cancelled by user');
+                    } else {
+                        reader.cancel('Generation completed');
+                    }
+                    reader.releaseLock();
+                    stream.cancel();
                 }
-                reader.releaseLock();
-                stream.cancel();
             }
 
             // generate title for new chats
@@ -143,14 +158,16 @@ const useSubmit = () => {
                     content: `Generate a title in less than 6 words for the following message:\nUser: ${user_message}\nAssistant: ${assistant_message}`,
                 };
 
-                let title = (await generateTitle([message])).trim();
-                if (title.startsWith('"') && title.endsWith('"')) {
-                    title = title.slice(1, -1);
-                }
+                // let title = (await generateTitle([message])).trim();
+                //
+                // if (title.startsWith('"') && title.endsWith('"')) {
+                //     title = title.slice(1, -1);
+                // }
+
                 const updatedChats: ChatInterface[] = JSON.parse(
                     JSON.stringify(useStore.getState().chats)
                 );
-                updatedChats[currentChatIndex].title = title;
+                // updatedChats[currentChatIndex].title = title;
                 updatedChats[currentChatIndex].titleSet = true;
                 setChats(updatedChats);
             }

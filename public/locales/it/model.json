@@ -7,7 +7,13 @@
     "description": "Controlla la casualità: abbassare i risultati in completamenti meno casuali. Quando la temperatura si avvicina allo zero, il modello diventerà deterministico e ripetitivo."
   },
   "presencePenalty": {
-    "label": "Improvvisazione",
+    "label": "Creatività",
     "description": "Più alto è il valore, più è probabile che ChatGPT parlerà di nuovi argomenti."
+  },
+  "picture": {
+    "width": "Larghezza",
+    "height": "Altezza",
+    "denoisingStepsNumber": "Numero di passaggi di denoising",
+    "guidanceScale": "Scala di orientamento"
   }
 }

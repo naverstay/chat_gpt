@@ -7,7 +7,13 @@
     "description": "Mengontrol keacakan: Menurunkan menghasilkan penyelesaian yang kurang acak. Saat suhu mendekati nol, model akan menjadi deterministik dan berulang."
   },
   "presencePenalty": {
-    "label": "Improvisasi",
+    "label": "Kreativitas",
     "description": "Semakin tinggi nilainya, semakin besar kemungkinan ChatGPT akan membicarakan topik baru."
+  },
+  "picture": {
+    "width": "Lebar",
+    "height": "Tinggi",
+    "denoisingStepsNumber": "Jumlah langkah denoising",
+    "guidanceScale": "Skala bimbingan"
   }
 }

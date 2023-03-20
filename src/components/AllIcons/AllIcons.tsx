@@ -27,37 +27,39 @@ import SpinnerIcon from '@icon/SpinnerIcon';
 import SunIcon from '@icon/SunIcon';
 import TickIcon from '@icon/TickIcon';
 import WorldIcon from '@icon/WorldIcon';
+import DownloadIcon from '@icon/DownloadIcon';
 
 const AllIcons = () => {
     return (
         <ul className="flex icon">
-            <li className="w-6 h-6 m-1"><AboutIcon></AboutIcon></li>
-            <li className="w-6 h-6 m-1"><ChatIcon></ChatIcon></li>
-            <li className="w-6 h-6 m-1"><CopyIcon></CopyIcon></li>
-            <li className="w-6 h-6 m-1"><CrossIcon></CrossIcon></li>
-            <li className="w-6 h-6 m-1"><CrossIcon2></CrossIcon2></li>
-            <li className="w-6 h-6 m-1"><DeleteIcon></DeleteIcon></li>
-            <li className="w-6 h-6 m-1"><DownArrow></DownArrow></li>
-            <li className="w-6 h-6 m-1"><DownChevronArrow></DownChevronArrow></li>
-            <li className="w-6 h-6 m-1"><EditIcon></EditIcon></li>
-            <li className="w-6 h-6 m-1"><EditIcon2></EditIcon2></li>
-            <li className="w-6 h-6 m-1"><ExportIcon></ExportIcon></li>
-            <li className="w-6 h-6 m-1"><HeartIcon></HeartIcon></li>
-            <li className="w-6 h-6 m-1"><ImageIcon></ImageIcon></li>
-            <li className="w-6 h-6 m-1"><LinkIcon></LinkIcon></li>
-            <li className="w-6 h-6 m-1"><LogoutIcon></LogoutIcon></li>
-            <li className="w-6 h-6 m-1"><MarkdownIcon></MarkdownIcon></li>
-            <li className="w-6 h-6 m-1"><MoonIcon></MoonIcon></li>
-            <li className="w-6 h-6 m-1"><PdfIcon></PdfIcon></li>
-            <li className="w-6 h-6 m-1"><PersonIcon></PersonIcon></li>
-            <li className="w-6 h-6 m-1"><PlusIcon></PlusIcon></li>
-            <li className="w-6 h-6 m-1"><RefreshIcon></RefreshIcon></li>
-            <li className="w-6 h-6 m-1"><SendIcon></SendIcon></li>
-            <li className="w-6 h-6 m-1"><SettingIcon></SettingIcon></li>
-            <li className="w-6 h-6 m-1"><SpinnerIcon></SpinnerIcon></li>
-            <li className="w-6 h-6 m-1"><SunIcon></SunIcon></li>
-            <li className="w-6 h-6 m-1"><TickIcon></TickIcon></li>
-            <li className="w-6 h-6 m-1"><WorldIcon></WorldIcon></li>
+            <li className="w-6 h-6 m-1"><AboutIcon/></li>
+            <li className="w-6 h-6 m-1"><ChatIcon/></li>
+            <li className="w-6 h-6 m-1"><CopyIcon/></li>
+            <li className="w-6 h-6 m-1"><CrossIcon/></li>
+            <li className="w-6 h-6 m-1"><CrossIcon2/></li>
+            <li className="w-6 h-6 m-1"><DeleteIcon/></li>
+            <li className="w-6 h-6 m-1"><DownArrow/></li>
+            <li className="w-6 h-6 m-1"><DownChevronArrow/></li>
+            <li className="w-6 h-6 m-1"><EditIcon/></li>
+            <li className="w-6 h-6 m-1"><EditIcon2/></li>
+            <li className="w-6 h-6 m-1"><ExportIcon/></li>
+            <li className="w-6 h-6 m-1"><HeartIcon/></li>
+            <li className="w-6 h-6 m-1"><ImageIcon/></li>
+            <li className="w-6 h-6 m-1"><LinkIcon/></li>
+            <li className="w-6 h-6 m-1"><LogoutIcon/></li>
+            <li className="w-6 h-6 m-1"><MarkdownIcon/></li>
+            <li className="w-6 h-6 m-1"><MoonIcon/></li>
+            <li className="w-6 h-6 m-1"><PdfIcon/></li>
+            <li className="w-6 h-6 m-1"><PersonIcon/></li>
+            <li className="w-6 h-6 m-1"><PlusIcon/></li>
+            <li className="w-6 h-6 m-1"><RefreshIcon/></li>
+            <li className="w-6 h-6 m-1"><SendIcon/></li>
+            <li className="w-6 h-6 m-1"><SettingIcon/></li>
+            <li className="w-6 h-6 m-1"><SpinnerIcon/></li>
+            <li className="w-6 h-6 m-1"><SunIcon/></li>
+            <li className="w-6 h-6 m-1"><TickIcon/></li>
+            <li className="w-6 h-6 m-1"><WorldIcon/></li>
+            <li className="w-6 h-6 m-1"><DownloadIcon/></li>
         </ul>
     );
 };

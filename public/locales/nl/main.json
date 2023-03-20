@@ -43,5 +43,7 @@
   "left": "berichten",
   "placeholder": "Vul je tekst in...",
   "image_placeholder": "Voer een afbeeldingsbeschrijving in...",
-  "start": "Voer uw bericht in om een chat te starten. Dit kan een vraag zijn, een stelling of een andere tekst."
+  "start": "Voer uw bericht in om een chat te starten. Dit kan een vraag zijn, een stelling of een andere tekst.",
+  "start_image": "Voer een beschrijving in van de afbeelding die u wilt genereren. Bijvoorbeeld: een astronaut op een paard op mars, hd, dramatische verlichting, gedetailleerd",
+  "download": "Downloaden"
 }

@@ -43,5 +43,7 @@
   "left": "pesan tersisa",
   "placeholder": "Masukkan teks Anda ...",
   "image_placeholder": "Masukkan deskripsi gambar ...",
-  "start": "Masukkan pesan Anda untuk memulai obrolan. Ini bisa berupa pertanyaan, pernyataan, atau teks lainnya."
+  "start": "Masukkan pesan Anda untuk memulai obrolan. Ini bisa berupa pertanyaan, pernyataan, atau teks lainnya.",
+  "start_image": "Masukkan deskripsi gambar yang ingin Anda hasilkan. Misal: astronot menunggang kuda di mars, hd, lighting dramatis, detail",
+  "download": "Unduh"
 }

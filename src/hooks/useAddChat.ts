@@ -21,7 +21,7 @@ const useAddChat = () => {
                 title = `${t('newChat')} ${titleIndex}`;
             }
 
-            updatedChats.unshift(generateDefaultChat(title, t('start') || ''));
+            updatedChats.unshift(generateDefaultChat(title, t('start_image') || ''));
             setChats(updatedChats);
             setCurrentChatIndex(0);
         }

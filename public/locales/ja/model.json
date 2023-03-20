@@ -7,7 +7,13 @@
     "description": "ランダム性を制御します: 下げると、ランダムな補完が少なくなります。 温度がゼロに近づくと、モデルは決定論的になり、反復的になります。"
   },
   "presencePenalty": {
-    "label": "即興",
+    "label": "創造性",
     "description": "値が高いほど、ChatGPT が新しいトピックについて話す可能性が高くなります。"
+  },
+  "picture": {
+    "width": "幅",
+    "height": "身長",
+    "denoisingStepsNumber": "ノイズ除去ステップ数",
+    "guidanceScale": "ガイダンススケール"
   }
 }

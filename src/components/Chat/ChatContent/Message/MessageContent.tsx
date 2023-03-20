@@ -5,6 +5,7 @@ import React, {
     useState,
 } from 'react';
 import {useTranslation} from 'react-i18next';
+import {saveAs} from 'file-saver';
 import ReactMarkdown from 'react-markdown';
 import {CodeProps, ReactMarkdownProps} from 'react-markdown/lib/ast-to-react';
 import rehypeKatex from 'rehype-katex';
@@ -16,6 +17,7 @@ import useStore from '@store/store';
 
 import EditIcon2 from '@icon/EditIcon2';
 import DeleteIcon from '@icon/DeleteIcon';
+import DownloadIcon from "@icon/DownloadIcon";
 import TickIcon from '@icon/TickIcon';
 import CrossIcon from '@icon/CrossIcon';
 import RefreshIcon from '@icon/RefreshIcon';
@@ -28,6 +30,7 @@ import {ChatInterface} from '@type/chat';
 import PopupModal from '@components/PopupModal';
 import CodeBlock from './CodeBlock';
 import {API_LIMIT, codeLanguageSubset} from '@constants/chat';
+import DownloadChat from "@components/Chat/ChatContent/DownloadChat";
 
 const MessageContent = ({
                             role,
@@ -78,6 +81,7 @@ const ContentView = React.memo(
     }) => {
         const {handleSubmit} = useSubmit();
         const [isDelete, setIsDelete] = useState<boolean>(false);
+        const apiPicture = useStore((state) => state.apiPicture);
         const currentChatIndex = useStore((state) => state.currentChatIndex);
         const setChats = useStore((state) => state.setChats);
         const lastMessageIndex = useStore((state) =>
@@ -129,45 +133,53 @@ const ContentView = React.memo(
 
         return (
             <>
-                <div className='markdown prose w-full break-words dark:prose-invert dark'>
-                    <ReactMarkdown
-                        remarkPlugins={[
-                            remarkGfm,
-                            [remarkMath, {singleDollarTextMath: false}],
-                        ]}
-                        rehypePlugins={[
-                            rehypeSanitize,
-                            [rehypeKatex, {output: 'mathml'}],
-                            [
-                                rehypeHighlight,
-                                {
-                                    detect: true,
-                                    ignoreMissing: true,
-                                    subset: codeLanguageSubset,
-                                },
-                            ],
-                        ]}
-                        linkTarget='_new'
-                        components={{
-                            code,
-                            p,
-                        }}
-                    >
-                        {content}
-                    </ReactMarkdown>
-                </div>
+                {(apiPicture && role === 'assistant') ?
+                    <div className='w-full'><img className='max-w-full' src={content} alt=""/></div>
+                    : <div className='markdown prose w-full break-words dark:prose-invert dark'>
+                        <ReactMarkdown
+                            remarkPlugins={[
+                                remarkGfm,
+                                [remarkMath, {singleDollarTextMath: false}],
+                            ]}
+                            rehypePlugins={[
+                                rehypeSanitize,
+                                [rehypeKatex, {output: 'mathml'}],
+                                [
+                                    rehypeHighlight,
+                                    {
+                                        detect: true,
+                                        ignoreMissing: true,
+                                        subset: codeLanguageSubset,
+                                    },
+                                ],
+                            ]}
+                            linkTarget='_new'
+                            components={{
+                                code,
+                                p,
+                            }}
+                        >
+                            {content}
+                        </ReactMarkdown>
+                    </div>
+                }
+
                 <div className='flex justify-end gap-2 w-full mt-2'>
                     {isDelete || (
                         <>
-                            {role === 'assistant' && messageIndex === lastMessageIndex && (
-                                <RefreshButton onClick={handleRefresh}/>
-                            )}
+                            {/*{role === 'assistant' && messageIndex === lastMessageIndex && (*/}
+                            {/*    <RefreshButton onClick={handleRefresh}/>*/}
+                            {/*)}*/}
                             {messageIndex !== 0 && <UpButton onClick={handleMoveUp}/>}
                             {messageIndex !== lastMessageIndex && (
                                 <DownButton onClick={handleMoveDown}/>
                             )}
 
-                            <EditButton setIsEdit={setIsEdit}/>
+                            {(apiPicture && role === 'assistant') && (
+                                <DownloadButton image_url={content}/>
+                            )}
+
+                            {/*<EditButton setIsEdit={setIsEdit}/>*/}
                             <DeleteButton setIsDelete={setIsDelete}/>
                         </>
                     )}
@@ -217,10 +229,10 @@ const p = React.memo(
     }
 );
 
-const MessageButton = ({
-                           onClick,
-                           icon,
-                       }: {
+export const MessageButton = ({
+                                  onClick,
+                                  icon,
+                              }: {
     onClick: React.MouseEventHandler<HTMLButtonElement>;
     icon: React.ReactElement;
 }) => {
@@ -256,6 +268,18 @@ const DeleteButton = React.memo(
     }) => {
         return (
             <MessageButton icon={<DeleteIcon/>} onClick={() => setIsDelete(true)}/>
+        );
+    }
+);
+
+const DownloadButton = React.memo(
+    ({
+         image_url,
+     }: {
+        image_url: string;
+    }) => {
+        return (
+            <MessageButton icon={<DownloadIcon/>} onClick={() => saveAs(image_url, 'image.jpg')}/>
         );
     }
 );
@@ -391,7 +415,7 @@ const EditView = ({
             onChange={(e) => {
                 _setContent(e.target.value);
             }}
-            placeholder={t('placeholder') as string}
+            placeholder={t('image_placeholder') as string}
             value={_content}
             onInput={handleInput}
             onKeyDown={handleKeyDown}

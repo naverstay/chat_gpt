@@ -11,19 +11,22 @@ const LanguageSelector = () => {
 
     const {i18n} = useTranslation();
     const {t} = useTranslation();
+    const excludedLocales = ['en-US'];
 
     const handleConfirm = () => {
         setIsModalOpen(false);
     };
 
-    const getAllLangs = async () => {
+    const getAllLocales = async () => {
         const locales = import.meta.glob('/public/locales/**/main.json');
 
         return Object.keys(locales).map((m: string): string => m.replace(/\/main.json$/, '').split('/').pop() as string)
     }
 
     useEffect(() => {
-        getAllLangs().then(d => setI18nLanguages(d));
+        getAllLocales().then(d => {
+            setI18nLanguages(d.filter(f => excludedLocales.indexOf(f) === -1))
+        });
     }, [])
 
     const [dropDown, setDropDown] = useState<boolean>(false);

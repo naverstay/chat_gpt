@@ -7,7 +7,13 @@
     "description": "Steuert die Zufälligkeit: Das Senken führt zu weniger zufälligen Vervollständigungen. Wenn sich die Temperatur Null nähert, wird das Modell deterministisch und repetitiv."
   },
   "presencePenalty": {
-    "label": "Improvisation",
+    "label": "Kreativität",
     "description": "Je höher der Wert, desto wahrscheinlicher wird ChatGPT über neue Themen sprechen."
+  },
+  "picture": {
+    "width": "Breite",
+    "height": "Höhe",
+    "denoisingStepsNumber": "Anzahl der Rauschunterdrückungsschritte",
+    "guidanceScale": "Orientierungsskala"
   }
 }

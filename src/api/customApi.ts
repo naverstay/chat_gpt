@@ -1,4 +1,4 @@
-import { ConfigInterface, MessageInterface } from '@type/chat';
+import {ConfigInterface, MessageInterface} from '@type/chat';
 
 export const endpoint = 'https://api.openai.com/v1/chat/completions';
 
@@ -40,8 +40,7 @@ export const getChatCompletion = async (
   });
   if (!response.ok) throw new Error(await response.text());
 
-  const data = await response.json();
-  return data;
+  return await response.json();
 };
 
 export const getChatCompletionStream = async (
@@ -64,6 +63,5 @@ export const getChatCompletionStream = async (
   });
   if (!response.ok) throw new Error(await response.text());
 
-  const stream = response.body;
-  return stream;
+  return response.body;
 };

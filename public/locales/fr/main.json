@@ -43,5 +43,7 @@
   "left": "messages restants",
   "placeholder": "Entrez votre texte...",
   "image_placeholder": "Entrez une description de l'image...",
-  "start": "Saisissez votre message pour démarrer une conversation. Il peut s'agir d'une question, d'une affirmation ou de tout autre texte."
+  "start": "Saisissez votre message pour démarrer une conversation. Il peut s'agir d'une question, d'une affirmation ou de tout autre texte.",
+  "start_image": "Entrez une description de l'image que vous souhaitez générer. Par exemple : un astronaute à cheval sur mars, hd, éclairage dramatique, détaillé",
+  "download": "Télécharger"
 }

@@ -7,7 +7,13 @@
     "description": "Contrôle le caractère aléatoire : la réduction entraîne des achèvements moins aléatoires. Lorsque la température approche de zéro, le modèle devient déterministe et répétitif."
   },
   "presencePenalty": {
-    "label": "",
+    "label": "La créativité",
     "description": "Plus la valeur est élevée, plus ChatGPT est susceptible de parler de nouveaux sujets."
+  },
+  "picture": {
+    "width": "Largeur",
+    "height": "Hauteur",
+    "denoisingStepsNumber": "Nombre d'étapes de débruitage",
+    "guidanceScale": "Échelle de guidage"
   }
 }

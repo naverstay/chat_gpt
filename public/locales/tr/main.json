@@ -43,5 +43,7 @@
   "left": "mesaj kaldı",
   "placeholder": "Metninizi girin...",
   "image_placeholder": "Bir resim açıklaması girin...",
-  "start": "Sohbet başlatmak için mesajınızı girin. Bu bir soru, bir ifade veya başka herhangi bir metin olabilir."
+  "start": "Sohbet başlatmak için mesajınızı girin. Bu bir soru, bir ifade veya başka herhangi bir metin olabilir.",
+  "start_image": "Oluşturmak istediğiniz resmin açıklamasını girin. Örneğin: Mars'ta ata binen bir astronot, hd, dramatik aydınlatma, ayrıntılı",
+  "download": "İndirmek"
 }

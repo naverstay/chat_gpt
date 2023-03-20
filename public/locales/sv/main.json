@@ -43,5 +43,7 @@
   "left": "meddelanden kvar",
   "placeholder": "Skriv in din text...",
   "image_placeholder": "Ange en bildbeskrivning...",
-  "start": "Skriv ditt meddelande för att starta en chatt. Detta kan vara en fråga, ett påstående eller någon annan text."
+  "start": "Skriv ditt meddelande för att starta en chatt. Detta kan vara en fråga, ett påstående eller någon annan text.",
+  "start_image": "Ange en beskrivning av bilden du vill skapa. Till exempel: en astronaut som rider på en häst på mars, hd, dramatisk belysning, detaljerad",
+  "download": "Ladda ner"
 }

@@ -7,12 +7,10 @@ const useInitialiseNewChat = () => {
     const setChats = useStore((state) => state.setChats);
     const setCurrentChatIndex = useStore((state) => state.setCurrentChatIndex);
 
-    const initialiseNewChat = () => {
-        setChats([generateDefaultChat('', t('start') || '')]);
+    return () => {
+        setChats([generateDefaultChat(t('newChat'), t('start_image') || '')]);
         setCurrentChatIndex(0);
     };
-
-    return initialiseNewChat;
 };
 
 export default useInitialiseNewChat;

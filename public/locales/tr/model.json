@@ -7,7 +7,13 @@
     "description": "Rastgeleliği kontrol eder: Düşürme, daha az rastgele tamamlamayla sonuçlanır. Sıcaklık sıfıra yaklaştıkça, model deterministik ve tekrarlayıcı hale gelecektir."
   },
   "presencePenalty": {
-    "label": "Doğaçlama",
+    "label": "Yaratıcılık",
     "description": "Değer ne kadar yüksek olursa, ChatGPT'nin yeni konular hakkında konuşma olasılığı o kadar yüksektir."
+  },
+  "picture": {
+    "width": "Genişlik",
+    "height": "Yükseklik",
+    "denoisingStepsNumber": "Gürültü giderme adımlarının sayısı",
+    "guidanceScale": "Rehberlik ölçeği"
   }
 }

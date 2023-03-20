@@ -7,7 +7,13 @@
     "description": "Controleert willekeur: verlagen resulteert in minder willekeurige voltooiingen. Naarmate de temperatuur nul nadert, wordt het model deterministisch en repetitief."
   },
   "presencePenalty": {
-    "label": "Improvisatie",
+    "label": "Ñreativiteit",
     "description": "Hoe hoger de waarde, hoe groter de kans dat ChatGPT over nieuwe onderwerpen zal praten."
+  },
+  "picture": {
+    "width": "Breedte",
+    "height": "Hoogte",
+    "denoisingStepsNumber": "Aantal denoising-stappen",
+    "guidanceScale": "Begeleiding schaal"
   }
 }

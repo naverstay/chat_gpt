@@ -43,5 +43,7 @@
   "left": "mensagens restantes",
   "placeholder": "Digite seu texto...",
   "image_placeholder": "Digite uma descrição da imagem...",
-  "start": "Digite sua mensagem para iniciar um bate-papo. Pode ser uma pergunta, uma afirmação ou qualquer outro texto."
+  "start": "Digite sua mensagem para iniciar um bate-papo. Pode ser uma pergunta, uma afirmação ou qualquer outro texto.",
+  "start_image": "Digite uma descrição da imagem que você deseja gerar. Por exemplo: um astronauta andando a cavalo em marte, hd, iluminação dramática, detalhes",
+  "download": "Baixar"
 }

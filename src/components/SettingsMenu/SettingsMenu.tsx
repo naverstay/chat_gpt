@@ -2,15 +2,11 @@ import React, {useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import useStore from '@store/store';
 
-import PopupModal from '@components/PopupModal';
 import SettingIcon from '@icon/SettingIcon';
 import ConfigMenu from "@components/ConfigMenu";
 import {shallow} from "zustand/shallow";
 import {ChatInterface, ConfigInterface} from "@type/chat";
 import {defaultChatConfig} from "@constants/chat";
-// import ThemeSwitcher from '@components/Menu/MenuOptions/ThemeSwitcher';
-// import LanguageSelector from '@components/LanguageSelector';
-// import AutoTitleToggle from './AutoTitleToggle';
 
 const SettingsMenu = () => {
     const {t} = useTranslation(['main', 'model']);

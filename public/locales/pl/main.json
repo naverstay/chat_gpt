@@ -43,5 +43,7 @@
   "left": "wiadomości",
   "placeholder": "Wpisz swoj tekst...",
   "image_placeholder": "Wprowadź opis obrazu...",
-  "start": "Wpisz swoją wiadomość, aby rozpocząć czat. Może to być pytanie, stwierdzenie lub dowolny inny tekst."
+  "start": "Wpisz swoją wiadomość, aby rozpocząć czat. Może to być pytanie, stwierdzenie lub dowolny inny tekst.",
+  "start_image": "Wprowadź opis obrazu, który chcesz wygenerować. Na przykład: astronauta na koniu na Marsie, hd, dramatyczne oświetlenie, szczegółowe",
+  "download": "Pobierać"
 }

@@ -49,10 +49,7 @@ const ChatContent = () => {
 
     return (
         <div className='flex-1 overflow-hidden'>
-            <ScrollToBottom
-                className='h-full dark:bg-gray-800'
-                followButtonClassName='hidden'
-            >
+            <ScrollToBottom className='h-full dark:bg-gray-800' followButtonClassName='hidden'>
                 <ScrollToBottomButton/>
                 <div className='flex flex-col items-center text-sm dark:bg-gray-800'>
                     <div
@@ -67,6 +64,7 @@ const ChatContent = () => {
                                     role={message.role}
                                     content={message.content}
                                     messageIndex={index}
+                                    saveRef={saveRef}
                                 />
                             </React.Fragment>
                         ))}
@@ -75,6 +73,7 @@ const ChatContent = () => {
                     <Message
                         role={inputRole}
                         content=''
+                        saveRef={saveRef}
                         messageIndex={stickyIndex}
                         sticky
                     />
@@ -95,14 +94,14 @@ const ChatContent = () => {
                         </div>
                     )}
 
-                    <div className="text-center mt-4 text-black dark:text-white">
-                        {t('left')}: {API_LIMIT - apiRequestCount}
-                    </div>
-                    <div className='mt-4'>
-                        {useStore.getState().generating || (
-                            <DownloadChat saveRef={saveRef}/>
-                        )}
-                    </div>
+                    {/*<div className="text-center mt-4 text-black dark:text-white">*/}
+                    {/*    {t('left')}: {API_LIMIT - apiRequestCount}*/}
+                    {/*</div>*/}
+                    {/*<div className='mt-4'>*/}
+                    {/*    {useStore.getState().generating || (*/}
+                    {/*        <DownloadChat saveRef={saveRef}/>*/}
+                    {/*    )}*/}
+                    {/*</div>*/}
                     <div className='w-full h-36'></div>
                 </div>
             </ScrollToBottom>

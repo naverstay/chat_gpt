@@ -7,7 +7,13 @@
     "description": "Kontrollerar slumpmässighet: Sänkning resulterar i mindre slumpmässiga avslut. När temperaturen närmar sig noll kommer modellen att bli deterministisk och repetitiv."
   },
   "presencePenalty": {
-    "label": "Improvisation",
+    "label": "Kreativitet",
     "description": "Ju högre värde, desto mer sannolikt kommer ChatGPT att prata om nya ämnen."
+  },
+  "picture": {
+    "width": "Bredd",
+    "height": "Höjd",
+    "denoisingStepsNumber": "Antal nedtoningssteg",
+    "guidanceScale": "Vägledningsskala"
   }
 }

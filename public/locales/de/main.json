@@ -43,5 +43,7 @@
   "left": "Nachrichten übrig",
   "placeholder": "Geben Sie Ihren Text ein ...",
   "image_placeholder": "Geben Sie eine Bildbeschreibung ein ...",
-  "start": "Geben Sie Ihre Nachricht ein, um einen Chat zu starten. Dies kann eine Frage, eine Aussage oder ein beliebiger anderer Text sein."
+  "start": "Geben Sie Ihre Nachricht ein, um einen Chat zu starten. Dies kann eine Frage, eine Aussage oder ein beliebiger anderer Text sein.",
+  "start_image": "Geben Sie eine Beschreibung des Bildes ein, das Sie generieren möchten. Zum Beispiel: ein Astronaut auf einem Pferd auf dem Mars, HD, dramatische Beleuchtung, detailliert",
+  "download": "Herunterladen"
 }
