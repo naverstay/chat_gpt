@@ -97,7 +97,7 @@ const useSubmit = () => {
 
                 if (apiPicture) {
                     const updatedMessages = updatedChats[currentChatIndex].messages;
-                    updatedMessages[updatedMessages.length - 1].content += stream?.output?.[0] ?? '';
+                    updatedMessages[updatedMessages.length - 1].content = stream?.output?.[0] ?? '';
                     setChats(updatedChats);
                 } else {
                     const reader = stream.getReader();

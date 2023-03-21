@@ -9,9 +9,14 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
+        lng: 'en',
         fallbackLng: 'en',
         ns: ['main', 'api', 'about', 'model'],
         defaultNS: 'main',
+        detection: {
+            lookupLocalStorage: 'picture-chat-gpt-lng',
+            lookupSessionStorage: 'picture-chat-gpt-lng',
+        }
     });
 
 export default i18n;

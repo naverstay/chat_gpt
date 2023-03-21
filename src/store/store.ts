@@ -27,7 +27,7 @@ const useStore = create<StoreState>()(
       ...createConfigSlice(set, get),
     }),
     {
-      name: 'free-chat-gpt',
+      name: 'picture-chat-gpt',
       partialize: (state) => ({
         chats: state.chats,
         currentChatIndex: state.currentChatIndex,

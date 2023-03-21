@@ -8,11 +8,11 @@ export const getPicture = async (
     apiKey?: string
 ) => {
     const headers: HeadersInit = {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
     };
     if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
 
-    const response = await fetch(endpoint, {
+    const response = await fetch('/api', {
         method: 'POST',
         headers,
         body: JSON.stringify({

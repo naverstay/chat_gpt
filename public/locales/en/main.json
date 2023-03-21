@@ -45,5 +45,7 @@
   "image_placeholder": "Enter an image description ...",
   "start": "Enter your message to start a chat. This could be a question, a statement, or any other text.",
   "start_image": "Enter a description of the picture you want to generate. For example: an astronaut riding a horse on mars, hd, dramatic lighting, detailed",
-  "download": "Download"
+  "download": "Download",
+  "stop_generating": "Stop generating",
+  "processing": "Processing ..."
 }

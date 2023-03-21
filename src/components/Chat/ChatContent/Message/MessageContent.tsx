@@ -79,8 +79,10 @@ const ContentView = React.memo(
         setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
         messageIndex: number;
     }) => {
+        const {t} = useTranslation();
         const {handleSubmit} = useSubmit();
         const [isDelete, setIsDelete] = useState<boolean>(false);
+        const generating = useStore((state) => state.generating);
         const apiPicture = useStore((state) => state.apiPicture);
         const currentChatIndex = useStore((state) => state.currentChatIndex);
         const setChats = useStore((state) => state.setChats);
@@ -133,8 +135,10 @@ const ContentView = React.memo(
 
         return (
             <>
-                {(apiPicture && role === 'assistant') ?
-                    <div className='w-full'><img className='max-w-full' src={content} alt=""/></div>
+                {(apiPicture && role === 'assistant' && content) ?
+                    <div className='w-full'>
+                        <img className='max-w-full' src={content} alt=""/>
+                    </div>
                     : <div className='markdown prose w-full break-words dark:prose-invert dark'>
                         <ReactMarkdown
                             remarkPlugins={[
@@ -159,7 +163,7 @@ const ContentView = React.memo(
                                 p,
                             }}
                         >
-                            {content}
+                            {content || t('processing')}
                         </ReactMarkdown>
                     </div>
                 }
@@ -324,6 +328,7 @@ const EditView = ({
     const inputRole = useStore((state) => state.inputRole);
     const setChats = useStore((state) => state.setChats);
     const currentChatIndex = useStore((state) => state.currentChatIndex);
+    const generating = useStore((state) => state.generating);
 
     const [_content, _setContent] = useState<string>(content);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -456,15 +461,16 @@ const EditViewButtons = React.memo(
         setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
     }) => {
         const {t} = useTranslation();
+        const generating = useStore((state) => state.generating);
         const apiRequestCount = useStore((state) => state.apiRequestCount);
 
         return (
-            <div className='text-center mt-2 flex justify-center'>
+            <div className='text-center gap-2 flex justify-center'>
                 {sticky && (
                     <button
-                        disabled={API_LIMIT <= apiRequestCount}
-                        className={'btn relative mr-2 btn-primary' +
-                            (API_LIMIT <= apiRequestCount ? 'btn-primary' : '')}
+                        disabled={generating || (API_LIMIT <= apiRequestCount)}
+                        className={'btn relative btn-primary' +
+                            (generating || (API_LIMIT <= apiRequestCount) ? 'btn-primary' : '')}
                         onClick={handleSaveAndSubmit}
                     >
                         <div className='flex items-center justify-center gap-2'>
@@ -473,12 +479,7 @@ const EditViewButtons = React.memo(
                     </button>
                 )}
 
-                <button
-                    className={`btn relative mr-2 ${
-                        sticky ? 'btn-neutral' : 'btn-primary'
-                    }`}
-                    onClick={handleSave}
-                >
+                <button className={`btn relative ${sticky ? 'btn-neutral' : 'btn-primary'}`} onClick={handleSave}>
                     <div className='flex items-center justify-center gap-2'>
                         {t('save')}
                     </div>
@@ -486,7 +487,7 @@ const EditViewButtons = React.memo(
 
                 {sticky || (
                     <button
-                        className='btn relative mr-2 btn-neutral'
+                        className='btn relative btn-neutral'
                         onClick={() => {
                             setIsModalOpen(true);
                         }}
