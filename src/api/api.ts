@@ -12,7 +12,7 @@ export const getPicture = async (
     };
     if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
 
-    const response = await fetch('/api', {
+    const response = await fetch(endpoint, {
         method: 'POST',
         headers,
         body: JSON.stringify({

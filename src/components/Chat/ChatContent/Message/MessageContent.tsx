@@ -30,17 +30,18 @@ import {ChatInterface} from '@type/chat';
 import PopupModal from '@components/PopupModal';
 import CodeBlock from './CodeBlock';
 import {API_LIMIT, codeLanguageSubset} from '@constants/chat';
-import DownloadChat from "@components/Chat/ChatContent/DownloadChat";
 
 const MessageContent = ({
                             role,
                             content,
                             messageIndex,
+                            lastMessage = false,
                             sticky = false,
                         }: {
     role: string;
     content: string;
     messageIndex: number;
+    lastMessage?: boolean;
     sticky?: boolean;
 }) => {
     const [isEdit, setIsEdit] = useState<boolean>(sticky);
@@ -60,6 +61,7 @@ const MessageContent = ({
                     role={role}
                     content={content}
                     setIsEdit={setIsEdit}
+                    lastMessage={lastMessage}
                     messageIndex={messageIndex}
                 />
             )}
@@ -73,11 +75,13 @@ const ContentView = React.memo(
          content,
          setIsEdit,
          messageIndex,
+         lastMessage = false,
      }: {
         role: string;
         content: string;
         setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
         messageIndex: number;
+        lastMessage: boolean;
     }) => {
         const {t} = useTranslation();
         const {handleSubmit} = useSubmit();
@@ -135,7 +139,7 @@ const ContentView = React.memo(
 
         return (
             <>
-                {(apiPicture && role === 'assistant' && content) ?
+                {(apiPicture && role === 'assistant' && !(lastMessage && generating)) ?
                     <div className='w-full'>
                         <img className='max-w-full' src={content} alt=""/>
                     </div>
@@ -163,7 +167,7 @@ const ContentView = React.memo(
                                 p,
                             }}
                         >
-                            {content || t('processing')}
+                            {lastMessage && generating ? t('processing') : content}
                         </ReactMarkdown>
                     </div>
                 }

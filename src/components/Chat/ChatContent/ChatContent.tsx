@@ -3,15 +3,11 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 import useStore from '@store/store';
 
 import ScrollToBottomButton from './ScrollToBottomButton';
-import ChatTitle from './ChatTitle';
 import Message from './Message';
 import CrossIcon from '@icon/CrossIcon';
 
 import useSubmit from '@hooks/useSubmit';
-import DownloadChat from './DownloadChat';
-import AllIcons from "@components/AllIcons";
 import {useTranslation} from "react-i18next";
-import {API_LIMIT} from "@constants/chat";
 
 const ChatContent = () => {
     const {t} = useTranslation();
@@ -62,6 +58,7 @@ const ChatContent = () => {
                             <React.Fragment key={index}>
                                 <Message
                                     role={message.role}
+                                    lastMessage={index === messages.length - 1}
                                     content={message.content}
                                     messageIndex={index}
                                     saveRef={saveRef}

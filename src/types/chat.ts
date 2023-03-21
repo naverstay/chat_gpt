@@ -16,10 +16,10 @@ export interface ChatInterface {
 }
 
 export interface ConfigInterface {
-    temperature: number;
-    presence_penalty: number;
-    top_p: number;
-    frequency_penalty: number;
+    // temperature: number;
+    // presence_penalty: number;
+    // top_p: number;
+    // frequency_penalty: number;
     width: number;
     height: number;
     num_inference_steps: number;

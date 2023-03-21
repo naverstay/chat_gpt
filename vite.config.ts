@@ -3,16 +3,16 @@ import react from '@vitejs/plugin-react-swc';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    server: {
-        proxy: {
-            '/api': {
-                target: 'https://stablediffusionapi.com/api/v3/text2img/',
-                changeOrigin: true,
-                secure: false,
-                rewrite: (path) => path.replace(/^\/api/, '')
-            },
-        },
-    },
+    // server: {
+    //     proxy: {
+    //         '/api': {
+    //             target: 'https://stablediffusionapi.com/api/v3/text2img/',
+    //             changeOrigin: true,
+    //             secure: false,
+    //             rewrite: (path) => path.replace(/^\/api/, '')
+    //         },
+    //     },
+    // },
     plugins: [react()],
     resolve: {
         alias: {
